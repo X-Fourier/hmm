@@ -1,31 +1,28 @@
 #ifndef _MODEL_NODE_H_
 #define _MODEL_NODE_H_
 
+#include <vector>
+class Transition;
+
 class ModelNode {
 public:
     ModelNode(int time, unsigned long state);
 
-    int time() const {
-        return _time;
-    }
+    int time() const { return _time; }
 
-    unsigned long state() const;
+    unsigned long state() const { return _state; }
 
-    void logAlpha(double logAlpha) {
-        _logAlpha = logAlpha;
-    }
+    void logAlpha(double logAlpha) { _logAlpha = logAlpha; }
 
-    double logAlpha() const {
-        return _logAlpha;
-    }
+    double logAlpha() const { return _logAlpha; }
 
-    void logBeta(double logBeta) {
-        _logBeta = logBeta;
-    }
+    void logBeta(double logBeta) { _logBeta = logBeta; }
 
-    double logBeta() const {
-        return _logBeta;
-    }
+    double logBeta() const { return _logBeta; }
+
+    std::vector<Transition*>& ins() { return _ins; }
+
+    std::vector<Transition*>& outs() { return _outs; }
 
     ~ModelNode();
 
@@ -37,6 +34,11 @@ private:
     double _logAlpha;
 
     double _logBeta;
+    
+    std::vector<Transition*> _ins;
+
+    std::vector<Transition*> _outs;
+
 };
 
 #endif

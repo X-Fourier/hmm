@@ -1,4 +1,5 @@
 #include "model_node.h"
+#include "transition.h"
 
 ModelNode::ModelNode(int time, unsigned long state) {
     _time = time;
@@ -8,5 +9,7 @@ ModelNode::ModelNode(int time, unsigned long state) {
 }
 
 ModelNode::~ModelNode() {
-    
+    for (unsigned int i = 0; i < _outs.size(); i++) {
+        delete _outs[i];
+    }
 }
