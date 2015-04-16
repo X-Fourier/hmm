@@ -20,6 +20,12 @@ public:
     
     }
 
+    ModelNode* from() { return _from; }
+
+    ModelNode* to() { return _to; }
+
+    unsigned long obs() { return _obs; }
+
 private:
     unsigned long _obs;
     ModelNode* _from;
