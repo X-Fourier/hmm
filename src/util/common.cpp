@@ -1,7 +1,7 @@
 #include "common.h"
 #include <math.h>
 
-double sumLogProb(std::vector<double>& logprobs) {
+double sumLogProb(const std::vector<double>& logprobs) {
     double max = 0;
     unsigned int i;
     for (i = 0; i<logprobs.size(); i++) {
