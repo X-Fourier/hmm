@@ -1,5 +1,7 @@
 #include "model_node.h"
 #include "transition.h"
+#include "hmm.h"
+#include <stdio.h>
 
 ModelNode::ModelNode(int time, unsigned long state, Hmm* hmm) {
     _time = time;
