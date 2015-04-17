@@ -7,7 +7,7 @@ class Hmm;
 
 class ModelNode {
 public:
-    ModelNode(int time, unsigned long state);
+    ModelNode(int time, unsigned long state, Hmm* hmm);
 
     int time() const { return _time; }
 
