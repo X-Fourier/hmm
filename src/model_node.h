@@ -3,6 +3,7 @@
 
 #include <vector>
 class Transition;
+class Hmm;
 
 class ModelNode {
 public:
@@ -24,6 +25,10 @@ public:
 
     std::vector<Transition*>& outs() { return _outs; }
 
+    void psi(Transition* psi) { _psi = psi; }
+
+    Transition* psi() { return _psi; }
+
     ~ModelNode();
 
 private:
@@ -39,6 +44,9 @@ private:
 
     std::vector<Transition*> _outs;
 
+    Hmm* _hmm; // 属于哪个模型
+
+    Transition* _psi; // 到达该节点最可能路径最后的状态转换
 };
 
 #endif
